@@ -1,11 +1,18 @@
 import React from 'react'
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/all";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
 
-const page = () => {
+gsap.registerPlugin(ScrollTrigger);
+
+const App = () => {
   return (
-    <div>
-      
-    </div>
+    <main>
+      <Navbar/>
+      <Hero/>
+    </main>
   )
 }
 
-export default page
+export default App

@@ -1,8 +1,4 @@
 import "./globals.css";
-import gsap from 'gsap';
-import { ScrollTrigger } from "gsap/all";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const metadata = {
   title: "Create Next App",
