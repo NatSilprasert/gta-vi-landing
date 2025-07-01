@@ -12,7 +12,7 @@ const ComingSoon = () => {
                 </h3>
             </div>
 
-            <div className='flex-center gap-10'>
+            <div className='flex-center gap-10 lower-section'>
                 <img src="/images/ps-logo.svg" className='md:wd-32 w-20' />
                 <img src="/images/x-logo.svg" className='md:wd-52 w-40' />
             </div>

@@ -69,11 +69,18 @@ main {
   .gradient-title {
     @apply md:text-[8rem] text-[5rem] font-round-bold !font-extrabold uppercase md:leading-[7rem] leading-[4.5rem] text-center bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent;
   }
+
   .hero-section {
     @apply w-dvw h-dvh relative overflow-hidden;
 
     .white-mask {
       @apply absolute inset-0 bg-white opacity-0 pointer-events-none z-10;
+        position: absolute;
+        inset: 0;
+        background: white;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 10;   
     }
     .scale-out {
       @apply object-cover md:scale-125 h-full;
@@ -99,11 +106,12 @@ main {
       @apply size-full object-cover md:[object-position:50%_center] [object-position:75%_center];
     }
   }
+  
   .entrance-message {
     @apply absolute inset-0 w-full h-dvh overflow-hidden z-20 opacity-100;
 
     .entrance-logo {
-      @apply 2xl:w-72 3xl:w-80 md:w-60 w-48 absolute xs:top-[9.5rem] sm:top-[12.8rem] md:top-[8.5rem] 2xl:top-44 3xl:top-48 left-1/2 -translate-x-1/2;
+      @apply 2xl:w-72 3xl:w-80 md:w-60 w-48 absolute top-[25%] lg:top-[8.5rem] 2xl:top-44 3xl:top-48 left-1/2 -translate-x-1/2;
     }
 
     .text-wrapper {

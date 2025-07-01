@@ -24,6 +24,10 @@ const Hero = () => {
             opacity: 0
         })
 
+        gsap.set('.lower-section', {  
+            opacity: 0
+        })
+        
         gsap.set('.entrance-message', {
              marginTop: '0vh'
         })
@@ -70,6 +74,9 @@ const Hero = () => {
             opacity: 0,
             duration: 0.1,
         }, '<')
+        .to('.lower-section', {
+            opacity: 1,
+        }, '<-0.05')
     });
 
     return (
