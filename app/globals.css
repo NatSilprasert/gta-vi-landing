@@ -197,7 +197,7 @@ main {
     }
   }
   .post-card {
-    @apply relative flex justify-center items-center pt-40 pb-80 shadow-2xl;
+    @apply relative flex justify-center items-center pt-40 pb-80;
 
     .animated-gradient-bg {
       @apply absolute w-full md:h-[200vh] h-[220vh] left-0 xl:-bottom-1/2 md:-bottom-5/6;
