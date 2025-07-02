@@ -9,7 +9,7 @@ const FirstVideo = () => {
 
     useGSAP(() => {
         gsap.set('.first-vd-wrapper', {
-            marginTop: '-150vh',
+            marginTop: '-300vh',
             opacity: 0,
         });
 
@@ -17,7 +17,7 @@ const FirstVideo = () => {
             scrollTrigger: {
                 trigger: '.first-vd-wrapper',
                 start: 'top top', 
-                end: '+=200% top',    
+                end: '+=300% top',    
                 scrub: true,
                 pin: true,
             }
@@ -25,9 +25,9 @@ const FirstVideo = () => {
 
         
         tl.to('.first-vd-wrapper', {
-            delay: 0.1,
+            delay: 6,
             opacity: 1,
-            duration: 2,
+            duration: 1,
             ease: 'power1.inOut',
         });
 

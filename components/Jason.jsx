@@ -12,8 +12,8 @@ const Jason = () => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: '.jason',
-                start: 'top 90%',
-                end: '12% top',
+                start: 'top 10%',
+                end: '5% top',
                 scrub: 2,
             }
         }).to('.first-vd', {
