@@ -15,17 +15,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   return (
-    <main>
-      <Navbar/>
-      <Hero/>
-      
-      <FirstVideo/>   
-      <Jason/>
+    <main className='relative'>
+      <div className='bg-color'></div>
+      <div className='z-20'>
+        <Navbar/>
+        <Hero/>
+        
+        <FirstVideo/>   
+        <Jason/>
 
-      <SecondVideo/>
-      <Lucia/>
+        <SecondVideo/>
+        <Lucia/>
 
-      <PostCard/>
+        <PostCard/>
+      </div>
     </main>
   )
 }

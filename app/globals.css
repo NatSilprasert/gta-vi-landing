@@ -66,6 +66,11 @@ main {
   nav {
     @apply fixed top-0 left-0 w-full flex justify-between items-center md:p-12 p-8 z-[100];
   }
+  .bg-color {
+    @apply absolute inset-0 z-0;
+    opacity: 0;
+    background: linear-gradient(99deg, #28375D 50%, #237085 100%) !important;
+  }
   .gradient-title {
     @apply md:text-[8rem] text-[5rem] font-round-bold !font-extrabold uppercase md:leading-[7rem] leading-[4.5rem] text-center bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent;
   }
@@ -261,4 +266,8 @@ main {
 
 .lucia-life-content {
   background: radial-gradient(ellipse, #111117 20%, transparent 70%);
+}
+
+.main-blue {
+  background: linear-gradient(92deg, #1e2a52 0%, #6e4b91 100%) !important;
 }
