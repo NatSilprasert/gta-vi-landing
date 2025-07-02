@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/all";
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import FirstVideo from '../components/FirstVideo';
+import Jason from '../components/Jason';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +17,7 @@ const App = () => {
       <Hero/>
       
       <FirstVideo/>   
+      <Jason/>
     </main>
   )
 }
