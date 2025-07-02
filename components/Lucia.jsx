@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 
 const Lucia = () => {
   useGSAP(() => {
-    gsap.set('.lucia-life', { marginTop: '-160vh'});
+    gsap.set('.lucia-life', { marginTop: '-140vh'});
 
     gsap.timeline({
       scrollTrigger: {

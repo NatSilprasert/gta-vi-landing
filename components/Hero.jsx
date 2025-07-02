@@ -67,9 +67,10 @@ const Hero = () => {
             duration: 1,
             ease: 'power1.inOut',
             maskImage: 'radial-gradient(circle at 50% 10vh, black 50%, transparent 100%)'
-        }, '>-0.29')
+        }, '>-0.25')
         .to('.entrance-message', {
             scale: 0.75,
+            y: 30,
             duration: 2,
             ease: 'power1.inOut',
         }, '>-0.5')
@@ -81,7 +82,7 @@ const Hero = () => {
             opacity: 1,
         }, '<-0.05')
         tl.to('.hero-section', {
-            delay: 1,
+            delay: 2,
             maskImage: 'linear-gradient(to top, transparent 60%, black 100%)',
             duration: 2,
             opacity: 0,
