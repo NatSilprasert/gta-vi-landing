@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/all';
 
-import { useMaskSettings } from '@/constant';
+import { useMaskSettings } from '../constant';
 import ComingSoon from './ComingSoon';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -45,14 +45,16 @@ const Hero = () => {
         tl
         .to('.fade-out', {
             opacity: 0,
-            duration: 0.3,
+            duration: 1,
             ease: 'power1.inOut',
         })
         .to('.scale-out', {
+            duration: 2,
             scale: 1,
             ease: 'power1.inOut',
         }, '<')
         .to('.mask-wrapper', {
+            duration: 2,
             maskPosition: maskPos,
             maskSize,
             ease: 'power1.inOut'
@@ -60,14 +62,15 @@ const Hero = () => {
         .to('.white-mask', {
             opacity: 1,
             ease: 'power1.inOut'
-        }, '>-0.3')
+        }, '<1.4')
         .to('.entrance-message', {
             duration: 1,
             ease: 'power1.inOut',
-            maskImage: 'radial-gradient(circle at 50% 0vh, black 50%, transparent 100%)'
-        }, '<0.07')
+            maskImage: 'radial-gradient(circle at 50% 10vh, black 50%, transparent 100%)'
+        }, '>-0.2')
         .to('.entrance-message', {
-            scale: 0.8,
+            scale: 0.7,
+            duration: 1.5,
             ease: 'power1.inOut',
         }, '>-0.5')
         .to('.mask-wrapper', {
@@ -77,6 +80,12 @@ const Hero = () => {
         .to('.lower-section', {
             opacity: 1,
         }, '<-0.05')
+        tl.to('.hero-section', {
+            delay: 0.5,
+            maskImage: 'linear-gradient(to top, transparent 50%, black 100%)',
+            opacity: 0,
+            ease: 'power1.inOut'
+        }, '<-0.2');
     });
 
     return (

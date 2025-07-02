@@ -71,16 +71,15 @@ main {
   }
 
   .hero-section {
+    mask-image: linear-gradient(to top, transparent 0%, black 0%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    transition: mask-image 0.5s;
     @apply w-dvw h-dvh relative overflow-hidden;
 
     .white-mask {
       @apply absolute inset-0 bg-white opacity-0 pointer-events-none z-10;
-        position: absolute;
-        inset: 0;
-        background: white;
-        opacity: 0;
-        pointer-events: none;
-        z-index: 10;   
+
     }
     .scale-out {
       @apply object-cover md:scale-125 h-full;
@@ -108,10 +107,10 @@ main {
   }
   
   .entrance-message {
-    @apply absolute inset-0 w-full h-dvh overflow-hidden z-20 opacity-100;
+    @apply scale-85 origin-top absolute inset-0 w-full h-dvh overflow-hidden z-20 opacity-100;
 
     .entrance-logo {
-      @apply 2xl:w-72 3xl:w-80 md:w-60 w-48 absolute top-[25%] lg:top-[8.5rem] 2xl:top-44 3xl:top-48 left-1/2 -translate-x-1/2;
+      @apply  lg:w-[16%] md:w-60 w-50 absolute top-[33.6vh] lg:top-[25%] left-1/2 -translate-x-1/2;
     }
 
     .text-wrapper {

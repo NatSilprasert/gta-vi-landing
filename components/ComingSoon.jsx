@@ -2,8 +2,8 @@ import React from 'react'
 
 const ComingSoon = () => {
   return (
-    <section className='entrance-message scale-85'>
-        <div className='h-full col-center gap-10'>
+    <section className='entrance-message'>
+        <div className='h-full col-center gap-10 mt-20'>
             <img src="/images/logo.webp" alt="logo" className='entrance-logo'/>
 
             <div className='text-wrapper'>
