@@ -19,7 +19,6 @@ const Final = () => {
         end: '+=300% top',
         scrub: true,
         pin: true,
-        markers: true,
       }
     })
 
@@ -29,7 +28,6 @@ const Final = () => {
           start: 'top 80%',
           end: '+=500% top',
           scrub: true,
-          markers: true,
         }
       })
 
@@ -44,11 +42,14 @@ const Final = () => {
         duration: 2,
         ease: 'power1.inOut'
       }, '<');
-    tl.to(videoRef.current, {
+
+    if (videoRef.current) {
+      tl.to(videoRef.current, {
         currentTime: videoRef.current.duration,
         duration: 6, 
         ease: 'power1.inOut' 
-    }, '<');
+      }, '<');
+    }
     tl.to('.final-content', {
         opacity: 0,
         duration: 1,

@@ -23,7 +23,6 @@ const FirstVideo = () => {
             }
         });
 
-        
         tl.to('.first-vd-wrapper', {
             delay: 6,
             opacity: 1,
@@ -31,14 +30,13 @@ const FirstVideo = () => {
             ease: 'power1.inOut',
         });
 
-        
-       
-        tl.to(videoRef.current, {
-            currentTime: videoRef.current.duration,
-            duration: 3,
-            ease: 'power1.inOut'
-        }, '<');
-        
+        if (videoRef.current) {
+            tl.to(videoRef.current, {
+                currentTime: videoRef.current.duration,
+                duration: 3,
+                ease: 'power1.inOut'
+            }, '<');
+        }
 
     }, []);
 
