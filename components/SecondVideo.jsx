@@ -1,17 +1,19 @@
 'use client'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 
 const SecondVideo = () => {
 
     const videoRef = useRef();
+    const tlRef = useRef();
 
     useGSAP(() => {
-        gsap.set('.lucia', { marginTop: '-70vh', opacity: 0 });
 
-        const tl = gsap.timeline({
+        gsap.set('.lucia', { marginTop: '-70vh', opacity: 0})
+
+        tlRef.current = gsap.timeline({
             scrollTrigger: {
                 trigger: '.lucia',
                 start: 'top top',
@@ -19,18 +21,28 @@ const SecondVideo = () => {
                 scrub: 2,
                 pin: true,
             }
-        });
+        })
 
-        tl.to('.lucia', { opacity: 1, duration: 1, ease: 'power1.inOut' });
+        tlRef.current.to('.lucia', { opacity: 1, duration: 1, ease: 'power1.inOut' })
 
-        if (videoRef.current) {
-            tl.to(videoRef.current, {
-                currentTime: videoRef.current.duration,
-                duration: 6,
-                ease: 'power1.inOut'
-            }, '<');
-        }
     })
+
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const animateVideo = () => {
+            if (!tlRef.current) return;
+            tlRef.current.to(video, { currentTime: videoRef.current.duration, duration: 6, ease: 'power1.inOut' }, '<')
+        };
+
+        if (video.readyState >= 1) {
+            animateVideo();
+        } else {
+            video.addEventListener('loadedmetadata', animateVideo);
+            return () => video.removeEventListener('loadedmetadata', animateVideo);
+        }
+    }, []);
 
     return (
         <section className='lucia'>

@@ -1,11 +1,12 @@
 'use client'
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const FirstVideo = () => {
 
     const videoRef = useRef(null);
+    const tlRef = useRef();
 
     useGSAP(() => {
         gsap.set('.first-vd-wrapper', {
@@ -13,31 +14,43 @@ const FirstVideo = () => {
             opacity: 0,
         });
 
-        const tl = gsap.timeline({
+        tlRef.current = gsap.timeline({
             scrollTrigger: {
                 trigger: '.first-vd-wrapper',
-                start: 'top top', 
-                end: '+=300% top',    
+                start: 'top top',
+                end: '+=300% top',
                 scrub: true,
                 pin: true,
             }
         });
 
-        tl.to('.first-vd-wrapper', {
+        tlRef.current.to('.first-vd-wrapper', {
             delay: 6,
             opacity: 1,
             duration: 1,
             ease: 'power1.inOut',
         });
+    }, []);
 
-        if (videoRef.current) {
-            tl.to(videoRef.current, {
-                currentTime: videoRef.current.duration,
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+
+        const animateVideo = () => {
+            if (!tlRef.current) return;
+            tlRef.current.to(video, {
+                currentTime: video.duration,
                 duration: 3,
                 ease: 'power1.inOut'
             }, '<');
-        }
+        };
 
+        if (video.readyState >= 1) {
+            animateVideo();
+        } else {
+            video.addEventListener('loadedmetadata', animateVideo);
+            return () => video.removeEventListener('loadedmetadata', animateVideo);
+        }
     }, []);
 
     return (
