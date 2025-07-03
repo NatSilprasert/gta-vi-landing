@@ -31,8 +31,10 @@ const App = () => {
   
         <PostCard/>
         <FinalVideo/>
-        
-        <Outro/>
+        <div className='w-full h-[100dvh]'>
+
+        </div>
+        {/* <Outro/> */}
       </div>
     </main>
   )

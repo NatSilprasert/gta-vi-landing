@@ -228,7 +228,7 @@ main {
   }
 
   .final-message {
-    @apply absolute w-full h-dvh overflow-hidden z-50 opacity-100;
+    @apply pointer-events-none fixed bottom-0 inset-0 w-full h-dvh overflow-hidden z-50 opacity-100;
   }
 }
 
